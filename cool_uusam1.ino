@@ -104,16 +104,504 @@ void verificacion(){
   Serial.println("Prueba de leds Finalizadacon exito! :)");
 }
 void imagen(){
-  char caracter;
-  Serial.print("Ingrese un caracter: ");
+  int opt2;
+  Serial.println("1.) Mostrar un patron predefinido.");
+  Serial.println("2.) Ingresar un patron.");
+  Serial.print("Seleccione una opcion: ");
   while(Serial.available() == 0);
-  caracter = Serial.read();
-  Serial.println(caracter);
-  if(caracter == 'A'){
+  opt2 = Serial.parseInt();
+  Serial.println(opt2);
+  switch(opt2){
+  case 1:
+    char caracter;
+    Serial.print("Ingrese un caracter: ");
+    while(Serial.available() == 0);
+    caracter = Serial.read();
+    Serial.println(caracter);
+    if(caracter == 'A'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, A[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'B'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, B[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'C'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, C[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'D'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, D[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'E'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, E[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'F'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, F[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'G'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, G[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+            j = 0;
+        }
+    }else if(caracter == 'H'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, H[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'I'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, I[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'J'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, J[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'K'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, K[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'L'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, L[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'M'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, M[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'N'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, N[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'O'){
+      for(k = 0; k<100; k++){
+          for(int i=0; i<20; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, O[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'P'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, P[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'Q'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, Q[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'R'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, R[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'S'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, S[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'T'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, T[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'U'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, U[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'V'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, V[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'W'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, W[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'X'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, X[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'Y'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, Y[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == 'Z'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, Z[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '0'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, cero[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '1'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, uno[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '2'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, dos[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '3'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, tres[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '4'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, cuatro[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '5'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, cinco[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '6'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, seis[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '7'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, siete[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '8'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, ocho[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }else if(caracter == '9'){
+      for(k = 0; k<20; k++){
+          for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              shiftOut(data, shift, LSBFIRST, nueve[j]);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+        }
+    }
+    break;
+  case 2:
+    int patron[8];
+    Serial.print("Ingrese un numeor entero de");
+    for(int i = 0; i < 8; i++){
+      //Serial.print("Ingrese el patron para la fila ");
+      Serial.print(i);
+      while(Serial.available() == 0);
+      patron[i] = Serial.parseInt();
+      Serial.println(patron[i]);
+    }
     for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
+      for(int i=0; i<8; i++){
             digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, A[j]);
+            shiftOut(data, shift, LSBFIRST, patron[j]);
             shiftOut(data, shift, LSBFIRST, row[i]);
             digitalWrite(store, HIGH);
             j++;
@@ -122,460 +610,9 @@ void imagen(){
         }
         j = 0;
       }
-  }else if(caracter == 'B'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, B[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'C'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, C[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'D'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, D[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'E'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, E[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'F'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, F[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'G'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, G[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'H'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, H[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'I'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, I[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'J'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, J[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'K'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, K[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'L'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, L[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'M'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, M[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'N'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, N[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'O'){
-    for(k = 0; k<100; k++){
-        for(int i=0; i<20; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, O[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'P'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, P[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'Q'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, Q[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'R'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, R[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'S'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, S[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'T'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, T[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'U'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, U[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'V'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, V[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'W'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, W[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'X'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, X[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'Y'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, Y[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == 'Z'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, Z[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '0'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, cero[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '1'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, uno[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '2'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, dos[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '3'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, tres[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '4'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, cuatro[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '5'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, cinco[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '6'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, seis[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '7'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, siete[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '8'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, ocho[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }else if(caracter == '9'){
-    for(k = 0; k<20; k++){
-        for(int i=0; i<8; i++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, nueve[j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            j++;
-            poti();
-            delay(potiValue);
-        }
-        j = 0;
-      }
-  }
+    break;
+  default:
+    Serial.println("Opcion fuera de rango.");
+    break;
+  } 
 }
