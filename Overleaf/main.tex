@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{cite}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{Parcial 1 Informática II}
+            
+        \vspace{0.5cm}
+        \LARGE
+        Informe del desarrollo
+            
+        \vspace{1.5cm}
+            
+        \textbf{Luis Miguel Gil Rodrigez}
+        \newline
+        \textbf{Sebastian Giraldo Gomez}
+        \newline
+        \textbf{Maverick Sossa Tobon}
+        \newline
+            
+        \vfill
+            
+        \vspace{0.8cm}
+            
+        \Large
+        Despartamento de Ingeniería Electrónica y Telecomunicaciones\\
+        Universidad de Antioquia\\
+        Medellín\\
+        Marzo de 2021
+            
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+\section{Sección introductoria}\label{intro}
+
+
+\section{Análisis del problema} \label{contenido}
+Se requiere de la construccion de un sistema, combinando hardware y software, que de pie a la solucion del problema planteado. En el desarrollo del mismo se emplearán unas herramietas en específico. Con leds, cables, resistencias y una protoboard se contruye una matriz de 8x8 leds. 
+Tal matriz, por medio de un integrado 4HC595 y un arduino, se controla a voluntad. 
+\newline
+
+Partiendo de una cantidad limitada de herramientas que se pueden implementar para la conexión del circuito, 
+Se procede a analizar el problema de la siguiente manera, es necesario construir una matriz de led 8 x 8 las cuales serán controladas por dos integrados 74HC595, un integrado maneja la parte de las filas y otro integrado las columnas, se necesita una protoboard para hacer la conexión en tinkercad.
+\newline
+
+Inicialmente se observa que se puede conectar los integrados en paralelo, para que la señal de entrada a un integrado principal, comprometa la salida del otro integrado. De esta manera manejamos las filas y columnas de la matriz de leds 8x8.
+Para el control de esta matriz se crean arreglos con notación binaria y hexadecimal las cuales nos representan los estados de los leds, es decir, prendido (1), apagado (0).
+\newline
+
+Una vez encontrando la conexión entre los leds y la forma del arreglo, se procede a programar un menú, para pedir al usuario una opción como se pide en los requisitos del parcial, de la siguiente manera:
+Se hace switch case para que el usuario ingrese por el puerto serial, la opción que desea realizar: 
+El usuario ingresa el número 1, lo cual representa una verificación de cada led, en cada posición de la matriz, prendiendo cada uno de los leds. 
+El usuario ingresa el numero 2, el cual muestra un patrón en la matriz de leds. El patrón esta dado por un carácter que el usuario ingrese por medio de la consola serial ( TABLA ASCII)
+\newline
+
+El usuario ingresa el número 3, el cual muestra una secuencia de patrones en la matriz de led, la secuencia estará dada por una cadena de caracteres que el usuario ingrese por la consola serial.
+
+
+
+
+\end{document}
