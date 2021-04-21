@@ -658,9 +658,28 @@ void publik(){
     Serial.print("Ingrese el tiempo que desea que transcurra entre los patrones ingresados: ");
     while(Serial.available() == 0);
     tempo = Serial.parseInt();
+    Serial.println(tempo);
 
     //MOSTRANDO LOS PATRONES POR LOS LEDS
-    for(int i=0; i < num_patrones; i++){
+    int count_secuencia = 0;
+    while(count_secuencia != num_patrones){
+      for(k = 0; k<20; k++){
+        for(int i=0; i<8; i++){
+              digitalWrite(store, LOW);
+              int valor = secuencias[count_secuencia][i];
+              shiftOut(data, shift, LSBFIRST, valor);
+              shiftOut(data, shift, LSBFIRST, row[i]);
+              digitalWrite(store, HIGH);
+              j++;
+              poti();
+              delay(potiValue);
+          }
+          j = 0;
+      }
+      count_secuencia++;
+    }
+    
+    /*for(int i=0; i < num_patrones; i++){
         for(int j = 0; j < 8; j++){
             digitalWrite(store, LOW);
             shiftOut(data, shift, LSBFIRST, secuencias[i][j]);
@@ -668,6 +687,6 @@ void publik(){
             digitalWrite(store, HIGH);
             delay(tempo);
           }       
-    }
+    }*/
     //FIN DE MOSTRAR PATRONES POR LEDS
 }
