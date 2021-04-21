@@ -1,10 +1,14 @@
 //PROTOTIPO DE FUNCIONES
+
 void verificacion();
 void imagen();
+void publik();
 int potiValue;
+
 //FIN PROTOTIPO DE FUNCIONES
+
+
 // DECLARACION DE VARIABLES
-// column counter
 int j = 0;
 int k;
 int row[8] = {127, 191, 223, 239, 247, 251, 253, 254};
@@ -78,12 +82,14 @@ void loop(){
     imagen();
     break;
   case 3:
+    publik();
     break;
   default:
     Serial.println("Opcion fuera de rango.");
     break;
   }
 }
+
 void poti(){
   potiValue = 10;
 }
@@ -589,19 +595,20 @@ void imagen(){
     }
     break;
   case 2:
-    int patron[8];
-    Serial.print("Ingrese un numeor entero de");
+    int patron [8];
+    Serial.println("Ingrese un numeor entero de 0 a 255:");
     for(int i = 0; i < 8; i++){
-      //Serial.print("Ingrese el patron para la fila ");
+      Serial.print("Ingrese el patron para la fila ");
       Serial.print(i);
+      Serial.print(": ");
       while(Serial.available() == 0);
-      patron[i] = Serial.parseInt();
+      *(patron + i) = Serial.parseInt();
       Serial.println(patron[i]);
     }
     for(k = 0; k<20; k++){
       for(int i=0; i<8; i++){
             digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, patron[j]);
+            shiftOut(data, shift, LSBFIRST, *(patron+j));
             shiftOut(data, shift, LSBFIRST, row[i]);
             digitalWrite(store, HIGH);
             j++;
@@ -609,10 +616,58 @@ void imagen(){
             delay(potiValue);
         }
         j = 0;
-      }
+    }
     break;
-    default:
-      Serial.println("Opcion fuera de rango.");
-      break;
+  default:
+    Serial.println("Opcion fuera de rango.");
+    break;
   } 
+}
+void publik(){
+  int num_patrones = 0;
+  int num = 0;
+  Serial.print("Ingrese cuantos patrones quiere mostrar: ");
+  while(Serial.available() == 0);
+  num_patrones = Serial.parseInt();
+  Serial.println(num_patrones);
+
+  //CREAMOS DINAMICAMENTE LA MATRIZ
+  int **secuencias = new int *[num_patrones];
+  for(int i = 0; i < num_patrones; i++){
+        secuencias[i] = new int [8];
+  }
+  //FIN CREACION DE MATRIZ DINAMICAMENTE
+  
+  //INGRESANDO VALORES A LA MATRIZ
+  for(int i = 0; i < num_patrones; i++){
+        for(int j = 0; j < 8; j++){
+            Serial.print("Ingrese el valor de la secuencia ");
+            Serial.print(i+1);
+            Serial.print(" de la fila ");
+            Serial.print(j+1);
+            Serial.print(": ");
+            while(Serial.available() == 0);
+            num = Serial.parseInt();
+            Serial.println(num);
+            secuencias[i][j] = num;
+        }
+    }
+    //Fin de ingreso de valores a la matriz de secuencias
+
+    int tempo;
+    Serial.print("Ingrese el tiempo que desea que transcurra entre los patrones ingresados: ");
+    while(Serial.available() == 0);
+    tempo = Serial.parseInt();
+
+    //MOSTRANDO LOS PATRONES POR LOS LEDS
+    for(int i=0; i < num_patrones; i++){
+        for(int j = 0; j < 8; j++){
+            digitalWrite(store, LOW);
+            shiftOut(data, shift, LSBFIRST, secuencias[i][j]);
+            shiftOut(data, shift, LSBFIRST, row[i]);
+            digitalWrite(store, HIGH);
+            delay(tempo);
+          }       
+    }
+    //FIN DE MOSTRAR PATRONES POR LEDS
 }
