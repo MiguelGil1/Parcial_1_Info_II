@@ -596,10 +596,11 @@ void imagen(){
     break;
   case 2:
     int patron [8];
-    Serial.println("Ingrese un numeor entero de 0 a 255:");
+    Serial.println("Ingrese un numeor entero de 0 a 255 para denotar el estado de ");
+    Serial.println("cada fila de la matriz comenzando desde la parte superior de la misma:");
     for(int i = 0; i < 8; i++){
       Serial.print("Ingrese el patron para la fila ");
-      Serial.print(i);
+      Serial.print(i+1);
       Serial.print(": ");
       while(Serial.available() == 0);
       *(patron + i) = Serial.parseInt();
