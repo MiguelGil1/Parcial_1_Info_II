@@ -100,7 +100,7 @@ void mostar_patron(byte *arreglo){
   for(k = 0; k<20; k++){
     for(int i=0; i<8; i++){
       digitalWrite(store, LOW);
-      shiftOut(data, shift, LSBFIRST, *(arreglo +));
+      shiftOut(data, shift, LSBFIRST, *(arreglo + j));
       shiftOut(data, shift, LSBFIRST, row[i]);
       digitalWrite(store, HIGH);
       j++;
@@ -111,19 +111,7 @@ void mostar_patron(byte *arreglo){
 }
 
 void verificacion(){
- 
-  for(k = 0; k<20; k++){
-    for(int i=0; i<8; i++){
-      digitalWrite(store, LOW);
-      shiftOut(data, shift, LSBFIRST, all[j]);
-      shiftOut(data, shift, LSBFIRST, row[i]);
-      digitalWrite(store, HIGH);
-      j++;
-      poti();
-      delay(potiValue);
-    }
-    j = 0;
-  }
+  mostar_patron(all);
   Serial.println("Prueba de leds Finalizadacon exito! :)");
 }
 void imagen(){
@@ -225,7 +213,16 @@ void imagen(){
       Serial.print(": ");
       while(Serial.available() == 0);
       *(patron + i) = Serial.parseInt();
-      Serial.println(patron[i]);
+      Serial.println(*(patron + i));
+      while(*(patron + i) > 255 || *(patron + i) < 0){
+        Serial.println("El numero ingresado debe estar entre [0,255]");
+        Serial.print("Ingrese el patron para la fila ");
+        Serial.print(i+1);
+        Serial.print(": ");
+        while(Serial.available() == 0);
+        *(patron + i) = Serial.parseInt();
+        Serial.println(*(patron + i));
+      }
     }
     for(k = 0; k<20; k++){
       for(int i=0; i<8; i++){
@@ -234,8 +231,7 @@ void imagen(){
             shiftOut(data, shift, LSBFIRST, row[i]);
             digitalWrite(store, HIGH);
             j++;
-            poti();
-            delay(potiValue);
+            delay(10);
         }
         j = 0;
     }
@@ -273,6 +269,17 @@ void publik(){
             while(Serial.available() == 0);
             num = Serial.parseInt();
             Serial.println(num);
+            while(num > 255 || num < 0){
+              Serial.println("El numero ingresado debe estar entre [0,255]");
+              Serial.print("Ingrese el valor de la secuencia ");
+              Serial.print(i+1);
+              Serial.print(" de la fila ");
+              Serial.print(j+1);
+              Serial.print(": ");
+              while(Serial.available() == 0);
+              num = Serial.parseInt();
+              Serial.println(num);
+            }
             secuencias[i][j] = num;
         }
     }
@@ -295,7 +302,6 @@ void publik(){
               shiftOut(data, shift, LSBFIRST, row[i]);
               digitalWrite(store, HIGH);
               j++;
-              poti();
               delay(tempo);
           }
           j = 0;
