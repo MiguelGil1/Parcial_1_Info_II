@@ -3,6 +3,7 @@
 void verificacion();
 void imagen();
 void publik();
+void mostar_patron(byte *);
 int potiValue;
 
 //FIN PROTOTIPO DE FUNCIONES
@@ -12,6 +13,7 @@ int potiValue;
 int j = 0;
 int k;
 int row[8] = {127, 191, 223, 239, 247, 251, 253, 254};
+byte all [8]={0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 byte A[] = {B00000000,B00111100,B01100110,B01100110,B01111110,B01100110,B01100110,B01100110};
 byte B[] = {B01111000,B01001000,B01001000,B01110000,B01001000,B01000100,B01000100,B01111100};
 byte C[] = {B00000000,B00011110,B00100000,B01000000,B01000000,B01000000,B00100000,B00011110};
@@ -90,11 +92,26 @@ void loop(){
   }
 }
 
-void poti(){
+/*void poti(){
   potiValue = 10;
+}*/
+
+void mostar_patron(byte *arreglo){
+  for(k = 0; k<20; k++){
+    for(int i=0; i<8; i++){
+      digitalWrite(store, LOW);
+      shiftOut(data, shift, LSBFIRST, *(arreglo +));
+      shiftOut(data, shift, LSBFIRST, row[i]);
+      digitalWrite(store, HIGH);
+      j++;
+      delay(10);
+    }
+    j = 0;
+  } 
 }
+
 void verificacion(){
-  byte all [8]={0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
+ 
   for(k = 0; k<20; k++){
     for(int i=0; i<8; i++){
       digitalWrite(store, LOW);
@@ -125,473 +142,77 @@ void imagen(){
     caracter = Serial.read();
     Serial.println(caracter);
     if(caracter == 'A'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, A[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(A);
     }else if(caracter == 'B'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, B[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(B);
     }else if(caracter == 'C'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, C[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(C);
     }else if(caracter == 'D'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, D[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(D);
     }else if(caracter == 'E'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, E[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(E);
     }else if(caracter == 'F'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, F[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(F);
     }else if(caracter == 'G'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, G[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-            j = 0;
-        }
+      mostar_patron(G);
     }else if(caracter == 'H'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, H[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(H);
     }else if(caracter == 'I'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, I[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(I);
     }else if(caracter == 'J'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, J[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(J);
     }else if(caracter == 'K'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, K[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(K);
     }else if(caracter == 'L'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, L[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(L);
     }else if(caracter == 'M'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, M[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(M);
     }else if(caracter == 'N'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, N[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(N);
     }else if(caracter == 'O'){
-      for(k = 0; k<100; k++){
-          for(int i=0; i<20; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, O[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(O);
     }else if(caracter == 'P'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, P[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(P);
     }else if(caracter == 'Q'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, Q[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(Q);
     }else if(caracter == 'R'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, R[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(R);
     }else if(caracter == 'S'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, S[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(S);
     }else if(caracter == 'T'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, T[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(T);
     }else if(caracter == 'U'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, U[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(U);
     }else if(caracter == 'V'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, V[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(V);
     }else if(caracter == 'W'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, W[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(W);
     }else if(caracter == 'X'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, X[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(X);
     }else if(caracter == 'Y'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, Y[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(Y);
     }else if(caracter == 'Z'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, Z[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(Z);
     }else if(caracter == '0'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, cero[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(cero);
     }else if(caracter == '1'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, uno[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(uno);
     }else if(caracter == '2'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, dos[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(dos);
     }else if(caracter == '3'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, tres[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(tres);
     }else if(caracter == '4'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, cuatro[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+       mostar_patron(cuatro);
     }else if(caracter == '5'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, cinco[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(cinco);
     }else if(caracter == '6'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, seis[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(seis);
     }else if(caracter == '7'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, siete[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(siete);
     }else if(caracter == '8'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, ocho[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(ocho);
     }else if(caracter == '9'){
-      for(k = 0; k<20; k++){
-          for(int i=0; i<8; i++){
-              digitalWrite(store, LOW);
-              shiftOut(data, shift, LSBFIRST, nueve[j]);
-              shiftOut(data, shift, LSBFIRST, row[i]);
-              digitalWrite(store, HIGH);
-              j++;
-              poti();
-              delay(potiValue);
-          }
-          j = 0;
-        }
+      mostar_patron(nueve);
     }
     break;
   case 2:
@@ -675,21 +296,12 @@ void publik(){
               digitalWrite(store, HIGH);
               j++;
               poti();
-              delay(potiValue);
+              delay(tempo);
           }
           j = 0;
       }
       count_secuencia++;
     }
-    
-    /*for(int i=0; i < num_patrones; i++){
-        for(int j = 0; j < 8; j++){
-            digitalWrite(store, LOW);
-            shiftOut(data, shift, LSBFIRST, secuencias[i][j]);
-            shiftOut(data, shift, LSBFIRST, row[i]);
-            digitalWrite(store, HIGH);
-            delay(tempo);
-          }       
-    }*/
     //FIN DE MOSTRAR PATRONES POR LEDS
+    delete []secuencias;
 }
