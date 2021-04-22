@@ -640,6 +640,8 @@ void publik(){
   //FIN CREACION DE MATRIZ DINAMICAMENTE
   
   //INGRESANDO VALORES A LA MATRIZ
+  Serial.println("Ingrese un numeor entero de 0 a 255 para denotar el estado de ");
+  Serial.println("cada fila de la matriz comenzando desde la parte superior de la misma:");
   for(int i = 0; i < num_patrones; i++){
         for(int j = 0; j < 8; j++){
             Serial.print("Ingrese el valor de la secuencia ");
