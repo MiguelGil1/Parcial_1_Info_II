@@ -45,19 +45,19 @@
 \tableofcontents
 \newpage
 \section{Sección introductoria}\label{intro}
-Los establecimientos comerciales cada vez implementan mas técnicas que permiten su  crecimiento económico. Es claro que el cliente es uno de los factores más importantes (sino el que más), por lo que es necesario que cada interaccion que éste tenga con el negacio sea del mejor agrado posible, y una primera impresion suele cautivar a cualquiera. Entre muchas otras cosas, un buen letrero suele llamar la atención, es un indicador de calidad y prestigio. Es un aspecto importante que se queda en los recuerdos de los clientes. 
+Los establecimientos comerciales cada vez implementan más técnicas que permiten su  crecimiento económico. Es claro que el cliente es uno de los factores más importantes (sino el que más), por lo que es necesario que cada interacción que éste tenga con el negacio sea del mejor agrado posible, y una primera impresión suele cautivar a cualquiera. Entre muchas otras cosas, un buen letrero suele llamar la atención, es un indicador de calidad y prestigio. Es un aspecto importante que se queda en los recuerdos de los clientes. 
 \newline
 
-Se hace notoriaa la necesidad de innovar en este aspecto, ofrecerle a los negocios físicos un efectivo método que atraiga a los interesados.  
+Se hace notoria la necesidad de innovar en este aspecto, ofrecerle a los negocios físicos un efectivo método que atraiga a los interesados.  
 
-Entonces, se requiere de la creación de un sistema, combinando hardware y software, que de pie a la solución del problema planteado. En el desarrollo del mismo se emplearán unas herramietas en específico. Con leds, cables, resistencias y una protoboard se contruye una matriz de 8x8 leds. 
+Entonces, se requiere de la creación de un sistema, combinando hardware y software, que de pie a la solución del problema planteado. En el desarrollo del mismo se emplearán unas herramietas en específico: con leds, cables, resistencias y una protoboard se contruye una matriz de 8x8 leds. 
 Tal matriz, por medio de un integrado 4HC595 y un arduino, se controla a voluntad. 
 
 \section{Análisis del problema} \label{contenido}
-Partiendo de una cantidad limitada de herramientas que se pueden implementar para la conexión del circuito, primero, se construye una matriz de leds de 8 x 8, con sus respectivas resistencias, la cuala será controlada por dos integrados 74HC595. Un integrado maneja la parte de las filas y otro integrado las columnas. Por motivos de orden y practicidad, se utiliza una protoboard para hacer el cableado al arduino para despues hacer 
+Partiendo de una cantidad limitada de herramientas que se pueden implementar para la conexión del circuito, primero, se construye una matriz de leds de 8 x 8, con sus respectivas resistencias, la cual será controlada por dos integrados 4HC595. Un integrado maneja la parte de las filas y otro integrado las columnas. Por motivos de orden y practicidad, se utiliza una protoboard para hacer el cableado al arduino para después hacer el programa.
 \newline
 
-Inicialmente se observa que se puede conectar los integrados en paralelo, para que la señal de entrada a un integrado principal, comprometa la salida del otro integrado. De esta manera manejamos las filas y columnas de la matriz de leds 8x8.
+Inicialmente se observa que se pueden conectar los integrados en paralelo, para que la señal de entrada a un integrado principal, comprometa la salida del otro integrado. De esta manera manejamos las filas y columnas de la matriz de leds 8x8.
 Para el control de esta matriz se crean arreglos con notación binaria y hexadecimal las cuales representan los estados de los leds, es decir, encendido (1) o apagado (0).
 \newline
 
@@ -79,7 +79,7 @@ Dado que la longitud del código del programa es un tanto extensa, y que para te
 \end{figure}
 
 \section{Algoritmo implementado}
-Para cumplir con un objetivo, resulta prático elaborar un plan en el que se establezca el modo y los medios disponibles y necesarios para llevar a cabo tal fin. Desarrollar un algoritmo, en donde se plantee un conjunto de pasos ordenados que permiten obtener cierto resultado buscado, es de las mejores formas de trazar el camino a seguir. Además, si se redacta, brevemente, la estructura del algoritmo implementado en la solución del problema puede ayudar a tener una idea general del método de solcuión empleado. 
+Para cumplir con un objetivo, resulta práctico elaborar un plan en el que se establezca el modo y los medios disponibles y necesarios para llevar a cabo tal fin. Desarrollar un algoritmo, en donde se plantee un conjunto de pasos ordenados que permiten obtener cierto resultado buscado, es de las mejores formas de trazar el camino a seguir. Además, si se redacta, brevemente, la estructura del algoritmo implementado en la solución del problema puede ayudar a tener una idea general del método de solución empleado. 
 
 \begin{lstlisting}[language=C++, label=codigo_ejemplo]
 // Protipo de funciones. 
@@ -218,7 +218,7 @@ void publik() { // Mustra una secuencia de patrones.
             // Intera sobre la cantidad de veces que se 
             // muestrar cada patron 
             for (int i = 0; i<8; i++) {
-                // Itera sobre cada fila de un patro
+                // Itera sobre cada fila de un patron
                 delay(tempo);
             }
         }cont_secuencia++;
@@ -231,9 +231,9 @@ void publik() { // Mustra una secuencia de patrones.
 
 \end{lstlisting}
 \section{Problemas de desarrollo en el proceso}
-En el proceso de solución de un problema, por lo general, se presentan dificultades o retos que realentizan la culminación del mismo. Es claro que el haber superado tales obtáculos en el camino, resulta ser algo muy enriquecedor y satisfactorio, por lo que, más que un estorbo, son realmente el dasafío más grande, y el logro de haberlos afrontado resulta en un trofeo incluso más grande que el de la propia consecución del proyecto principal. 
+En el proceso de solución de un problema, por lo general, se presentan dificultades o retos que realentizan la culminación del mismo. Es claro que el haber superado tales obtáculos en el camino, resulta ser algo muy enriquecedor y satisfactorio, por lo que, más que un estorbo, son realmente el verdadero desafío, y el logro de haberlos afrontado resulta en un trofeo incluso más grande que el de la propia consecución del proyecto principal. 
 \newline
-Se enuncian a continuación los retos más destacado en el desarrollo. 
+Se enuncian a continuación los retos más destacados en el desarrollo. 
 \begin{enumerate}
     \item 
     Confusión a la hora plantear un modelo circuital, pues no hay seguridad de que lo que se realice cumpla con el objetivo.
