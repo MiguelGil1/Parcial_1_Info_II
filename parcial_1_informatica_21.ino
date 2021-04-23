@@ -15,7 +15,7 @@ int k;
 int row[8] = {127, 191, 223, 239, 247, 251, 253, 254};
 byte all [8] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 byte null[8] = {B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000,B00000000};
-byte A[] = {B01100110,B01100110,B01100110,B01111110,B01100110,B01100110,B00111100,B00000000};
+byte A[] = {B00000000,B00111100,B01100110,B01100110,B01111110,B01100110,B01100110,B01100110};
 byte B[] = {B01111000,B01001000,B01001000,B01110000,B01001000,B01000100,B01000100,B01111100};
 byte C[] = {B00000000,B00011110,B00100000,B01000000,B01000000,B01000000,B00100000,B00011110};
 byte D[] = {B00000000,B00111000,B00100100,B00100010,B00100010,B00100100,B00111000,B00000000};
@@ -256,7 +256,7 @@ void imagen(){
   case 2:
     int patron [8];
     Serial.println("Ingrese un numeor entero de 0 a 255 para denotar el estado de ");
-    Serial.println("cada fila de la matriz comenzando desde la parte inferior de la misma:");
+    Serial.println("cada fila de la matriz comenzando desde la parte superior de la misma:");
     for(int i = 0; i < 8; i++){
       Serial.print("Ingrese el patron para la fila ");
       Serial.print(i+1);
@@ -330,7 +330,7 @@ void publik(){
   
   //INGRESANDO VALORES A LA MATRIZ
   Serial.println("Ingrese un numeor entero de 0 a 255 para denotar el estado de ");
-  Serial.println("cada fila de la matriz comenzando desde la parte inferior de la misma:");
+  Serial.println("cada fila de la matriz comenzando desde la parte superior de la misma:");
   for(int i = 0; i < num_patrones; i++){
         for(int j = 0; j < 8; j++){
             Serial.print("Ingrese el valor de la secuencia ");
