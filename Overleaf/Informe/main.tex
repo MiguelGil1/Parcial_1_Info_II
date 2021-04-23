@@ -57,7 +57,7 @@ Tal matriz, por medio de un integrado 4HC595 y un arduino, se controla a volunta
 Partiendo de una cantidad limitada de herramientas que se pueden implementar para la conexión del circuito, primero, se construye una matriz de leds de 8 x 8, con sus respectivas resistencias, la cual será controlada por dos integrados 4HC595. Un integrado maneja la parte de las filas y otro integrado las columnas. Por motivos de orden y practicidad, se utiliza una protoboard para hacer el cableado al arduino para después hacer el programa.
 \newline
 
-Inicialmente se observa que se pueden conectar los integrados en paralelo, para que la señal de entrada a un integrado principal, comprometa la salida del otro integrado. De esta manera manejamos las filas y columnas de la matriz de leds 8x8.
+Inicialmente se observa que se pueden conectar los integrados en serie, para que la señal de entrada a un integrado principal, comprometa la salida del otro integrado. De esta manera manejamos las filas y columnas de la matriz de leds 8x8.
 Para el control de esta matriz se crean arreglos con notación binaria y hexadecimal las cuales representan los estados de los leds, es decir, encendido (1) o apagado (0).
 \newline
 
