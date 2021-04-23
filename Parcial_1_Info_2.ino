@@ -119,7 +119,7 @@ void mostrar_null(){
 
   Debido a nuestra conexion y a la inicializacion de la variable row, podemos
   controlar el comportamiento de nuestra matriz de leds por medio de las filas
-  El primer byte qjue se muestra va a ser en la fila mas proxima a las resistencias
+  El primer byte qjue se muestra va a ser en la fila superior
 */
 
 void mostar_patron(byte *arreglo){
